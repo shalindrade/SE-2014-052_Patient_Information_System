@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="prescription" language="groovy" pageWidth="290" pageHeight="421" columnWidth="250" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="precriptionID" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM prescribedMedicine,MedicalHistory,Students,Users
+WHERE prescribedMedicine.prescribedHistoryID LIKE $P{precriptionID}
+AND prescribedMedicine.prescribedHistoryID=MedicalHistory.historyID
+AND Students.sid=MedicalHistory.sid
+AND Users.uid=MedicalHistory.docID]]>
+	</queryString>
+	<field name="prescribedHistoryID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prescribedMedicineName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="docName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="historyID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_time" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sid" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="docID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dob" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PriviousSurgery" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NonInfectiousDiseases" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EyeCondition" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AllergicConditions" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BloodGroup" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LastVisitDate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tempAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="immergencyTelNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="personalTelNum" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="uid" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="position" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="password" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nic" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SLMC_RegNo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="116" splitType="Stretch">
+			<staticText>
+				<reportElement x="101" y="11" width="77" height="13"/>
+				<textElement/>
+				<text><![CDATA[Medicle Center]]></text>
+			</staticText>
+			<image>
+				<reportElement x="36" y="0" width="52" height="46"/>
+				<imageExpression><![CDATA["/Users/kanishkamadhuranga/Desktop/DBMS Project/Medical Centre - University of Kelaniya/Software(Medical_Centre)/src/images/uniLogo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="88" y="24" width="110" height="13"/>
+				<textElement/>
+				<text><![CDATA[University of Kelaniya]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="67" width="103" height="12"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="79" width="103" height="12"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{sid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="91" width="103" height="12"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="67" width="54" height="12"/>
+				<textElement/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="79" width="54" height="12"/>
+				<textElement/>
+				<text><![CDATA[Student Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="91" width="54" height="12"/>
+				<textElement/>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="46" width="85" height="12"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prescription]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="58" width="249" height="1"/>
+			</line>
+			<line>
+				<reportElement x="1" y="107" width="249" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="47" y="0" width="168" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{prescribedMedicineName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="3" width="53" height="10"/>
+				<textElement/>
+				<text><![CDATA[Diagnosed by:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="36" y="13" width="100" height="11"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{docName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="24" width="53" height="10"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SLMC_RegNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="36" y="34" width="100" height="8"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{date_time}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="2" width="249" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="36" y="24" width="47" height="10"/>
+				<textElement/>
+				<text><![CDATA[SLMC Reg.No.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="17" y="12" width="223" height="67"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="2" width="53" height="10"/>
+				<textElement/>
+				<text><![CDATA[Description :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="1" width="249" height="1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
